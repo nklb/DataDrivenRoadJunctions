@@ -16,6 +16,7 @@ export serialize, deserialize, getdsetids, getvehicledset, observationtime
 export getvolumes, numberdensities, defaulttrange, inoutfluxes, xinout
 export ZeroFlux, HomNeumann, Outgoing, Periodic, Problem21, centralcoupling
 export constantinitialdata21, FirstOrder, SecondOrder, stats, FixedFluxOutgoing
+export varyFD, negpenalty, fdpenalty
 
 function tolatexfloat(x)
     s = @sprintf("%1.3e", x)

@@ -37,18 +37,6 @@ for k=1:4
     print(" \n")
 end
 
-# getFD(mfile) = BSON.load(mfile)["model"].M 
-
-# FDs = [M, getFD(C_models[2]), getFD(C_models[3]), getFD(C_models[4]), getFD(D_models[2])]
-
-# for k=1:3
-#     print(" | ")
-#     for j =1:length(FDs)
-#         @printf("%2.2f | ", FDs[j][k].vmax * 3.6)
-#     end
-#     print(" \n")
-# end
-
 L1 = BSON.load(D_models[1])["model"]
 L2 = BSON.load(D_models[2])["model"]
 

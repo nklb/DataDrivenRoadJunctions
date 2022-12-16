@@ -24,10 +24,7 @@ t0, T, zs = observationtime(vehicles)
 EntryVol, MainInVol, OutVol = getvolumes(series)
 t = defaulttrange(vehicles)
 M = length(t)
-
 ρ, v = numberdensities([EntryVol, MainInVol, OutVol], vehicles, t)
-sects = ["E", "T", "O"]
-
 fluxes = [ρ[j, :] .* v[j, :] for j=1:3]
 
 dt = t[2] - t[1]
@@ -77,7 +74,6 @@ PF = plot(t[xrange], fluxes[1][xrange] + fluxes[2][xrange .+ s2], label="f_E(.)+
 plot!(PF, t[xrange], fluxes[3][xrange .+ s3], label="f_O(.+τ3)")
 push!(P, PF)
 
-#err = err .* err 
 push!(P, plot(t[xrange], err, label="conservation error"))
 println("Lowest deviation (", minimum(deviation), ") for τ_2=", shiftrangeT[best[1]] * dt, " and τ_3=", shiftrangeO[best[2]] * dt, ".")
 

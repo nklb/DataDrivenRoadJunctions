@@ -30,8 +30,6 @@ for j=1:3
     open(string(ofile, "_data_road",  j, ".dat"), "w") do io
         writedlm(io, [ρ[j, filter[j, :]] st[j, filter[j, :]]])
     end
-
-
     push!(plots_p1, GS)
 end
 
