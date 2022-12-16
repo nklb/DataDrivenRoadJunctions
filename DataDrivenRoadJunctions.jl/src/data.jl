@@ -17,7 +17,7 @@ end
 
 
 function getvolume(series::String, varname::String)::Vector{Vector{Real}}
-    Lmat = matopen(string(gitroot(), "/data/", series, "/Volumes.mat"))
+    Lmat = matopen(string(gitroot(), "/FCD/", series, "/Volumes.mat"))
     Vol = read(Lmat, varname)
     [Vol[i, :] for i = [collect(1:size(Vol, 1)); 1]]
 end

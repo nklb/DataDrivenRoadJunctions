@@ -1,8 +1,8 @@
 using MAT
 using MATLAB
 
-function matimport(series::String, importtemplates::Bool=true)
-    dsets = readdir(string(gitroot(), "/data/", series))
+function matimport(series::String, importtemplates::Bool=false)
+    dsets = readdir(string(gitroot(), "/FCD/", series))
     templates = Dict{Integer, VehicleTemplate}()
     ids = Set{Integer}()
 
@@ -12,7 +12,7 @@ function matimport(series::String, importtemplates::Bool=true)
         end
         id = dset[1:end-4]
         println("Dataset: ", id)
-        dpath = string(gitroot(), "/data/", series, "/", dset)
+        dpath = string(gitroot(), "/FCD/", series, "/", dset)
         eval_string(string("mx_veh=load('", dpath,"');"))
         L = matopen(dpath)
         mat_veh = read(L, "vehicles")
@@ -61,7 +61,7 @@ function matimport(series::String, importtemplates::Bool=true)
         close(io)
     end
     if importtemplates
-        io = open(string(gitroot(), "/data/", series, "/VehicleTemplates.jls.xz"), "w")
+        io = open(string(gitroot(), "/FCD/", series, "/VehicleTemplates.jls.xz"), "w")
         io = TranscodingStream(XzCompressor(), io)
         serialize(io, sort(templates))
         close(io)

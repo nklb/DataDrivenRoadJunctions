@@ -4,10 +4,11 @@ using Interpolations
 using MATLAB
 using StatsBase
 using EasyGit
+using NNlib: softplus
 
-function softplus(x::Real)
-    log(exp(x) + 1)
-end
+# function softplus(x::Real)
+#     log(exp(x) + 1)
+# end
 
 
 function rms(x)

@@ -43,17 +43,17 @@ end
 
 
 function getvehicledset(series::String, id::String)::Vector{Vehicle}
-    loadcompressed(string(gitroot(), "/data/", series, "/", id, ".jls.xz"))
+    loadcompressed(string(gitroot(), "/FCD/", series, "/", id, ".jls.xz"))
 end
 
 
 function getvehicletemplates(series::String)
-    loadcompressed(string(gitroot(), "/data/", series, "/VehicleTemplates.jls.xz"))
+    loadcompressed(string(gitroot(), "/FCD/", series, "/VehicleTemplates.jls.xz"))
 end
 
 
 function getdsetids(series::String)
-    dsetfld = string(gitroot(), "/data/", series, "/")
+    dsetfld = string(gitroot(), "/FCD/", series, "/")
     ids = String[]
     for f in readdir(dsetfld)
         length(f) < 7 && continue
