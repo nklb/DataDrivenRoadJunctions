@@ -1,4 +1,4 @@
-# Codes for data-driven coupling models at Road Junctions
+# Implementation of data-driven coupling models at road junctions
 Codes used in the paper
 > Data-driven Models for Traffic Flow at Junctions
 
