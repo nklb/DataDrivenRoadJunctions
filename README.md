@@ -4,7 +4,7 @@ Codes used in the paper
 
 by M. Herty & N. Kolbe
 
-A preprint of the paper will be available soon.
+A preprint of the paper is available on [arXiv](https://arxiv.org/abs/2212.08912).
 
 Julia codes were written by N. Kolbe
 
